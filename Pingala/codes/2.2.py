@@ -1,7 +1,10 @@
 from matplotlib import pyplot as plt
 
-x = [1, 1]
-for i in range(23): x.append(x[-1] + x[-2])
+x = [1, 1]   # x[0] = x[1] = 1
+
+for i in range(23): 
+  x.append(x[-1] + x[-2])
+ 
 plt.stem(range(len(x)), x)
 plt.grid()
 plt.xlabel('$n$')
