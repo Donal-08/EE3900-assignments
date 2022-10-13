@@ -1,3 +1,4 @@
+from turtle import color
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -14,9 +15,10 @@ vc0 = np.vectorize(v1, otypes=['double'])
 vc1 = np.loadtxt('v1.txt')
 t = np.linspace(0, 1e-5, 1000000)
 plt.plot(t, vc0(t))
-plt.plot(vc1[:,0], vc1[:,1], '.')
+plt.plot(vc1[:,0], vc1[:,1], '.', color = "red")
 plt.xlabel('t (s)')
 plt.ylabel('$v_{C_0}(t)$ (V)')
 plt.grid()
-plt.legend(['Simulation', 'Analysis'])
-plt.savefig('figs/2_6.png')
+plt.legend(['Analysis', 'Simulation using ngspice'])
+plt.savefig('../figs/2.6.png')
+plt.show()
