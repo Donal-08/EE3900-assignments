@@ -308,7 +308,7 @@ columns=fullflexible
 \solution\\ 
 A discrete signal $x[n]$ is said to be periodic when 
 \begin{equation}
-    x[n] = x[n+N]
+    x[n] = x[n+N]   \label{eq1}
 \end{equation}
 if discrete signal is periodic then the ration $\frac{\omega_0}{2\pi}$ must be rational i.e., $\frac{m}{N}$
 where m = no.of full cycles and N = no. of samples\\
@@ -318,7 +318,14 @@ Now, for the given signal
     \frac{\omega_0}{2\pi} &= \frac{3\pi}{4\times 2 \pi}\\
     &= \frac{3}{8} \qquad \text(rational)
 \end{align}
-$\therefore$ The signal is periodic with period 8.We can also verify from the plot \eqref{plotfig}
+Also using the definiton in \eqref{eq1}, we can write
+\begin{align}
+    &e^{j(3\pi n/4)} =  e^{j(3\pi (n+N)/4)} = e^{j(3\pi n/4+2\pi k)} \\
+    &\implies 2\pi k = \frac{3\pi}{4}N  \text{,      for integers k, N}\\
+    &\implies N = \frac{8}{3}k \text{,      for integers k, N} \\
+\end{align}
+The smallest k for which both k and  N are integers is 3 , resulting in a period of 8. \\
+$\therefore$ The signal is periodic with period 8. We can also verify from the plot \eqref{plotfig}
 \begin{figure}[h]
     \centering
     \includegraphics[width=\columnwidth]{donal.png}
